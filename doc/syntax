@@ -1,0 +1,60 @@
+var-declarator      -> [visibility-prefix] type-name name `;` |
+                    w   [visibility-prefix] type-name name = value `;` 
+
+var-declarator-list -> %EMPTY% 
+                        | var-declartor-list var-declarator 
+
+stage-var-declare -> `var` `:` `{`
+                        var-declarator-list
+                    `}`
+
+map-name-declare -> `map` `:` STRING;
+
+block -> { stmts }
+
+stmts -> %EMPTY%
+         | stmts stmt;
+
+stmt -> selection
+        | iteration
+        | block
+        | expr ;
+        | return ;
+        | ;
+        /*| break ;*/
+
+iteration -> `while` ( expr ) stmt
+            | `do` stmt `while` ( expr );
+            | `for` (expr;expr;expr) stmt
+
+selection -> `if` ( expr ) stmt
+              | `if` ( expr ) `else` stmt
+
+para-list -> expr | para-list `,` expr
+para-list-ext -> para-list | %EMPTY%
+factor -> ID | ID `.` ID | ID `(` para-list-ext `)` | NUM | REAL |( expr ) | STR
+
+postifix -> factor | factor ++ | factor --
+unary -> postfix | !unary | -unary | ++ unary | -- unary
+term -> term * unary | term / unary | unary
+add  -> add + term | add - term | term
+rel -> rel >= add | rel <= add | rel < add | rel > add | add
+equality -> equality == rel | equality != rel | rel
+join -> join && equality | equality
+bool -> bool || join 
+        | join
+expr -> unary = expr | bool
+
+event-function-declare -> ID `:` block
+
+stage-declator -> stage-var-declare
+                | map-name-declare
+                | event-function-declare
+
+stage-declator-list ->  %EMPTY% 
+                        | stage-declator-list stage-declator
+                
+                
+stage -> `stage` name `:`{
+                stage-declator-list 
+          }
