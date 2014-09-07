@@ -3,17 +3,38 @@
 
 namespace lexer {
     typedef int tag_t;
-    namespace tag{
-        const tag_t AND   = 256,BASIC = 257,BREAK = 258,
-                    DO    = 259,ELSE  = 260,EQ    = 261,
-                    FALSE = 262,GE    = 263,ID    = 264,
-                    IF    = 265,INDEX = 266,LE    = 267,
-                    MINUS = 268,NE    = 269,NUM   = 270,
-                    OR    = 271,REAL  = 272,
-                    TRUE  = 274,WHILE = 275,INC   = 276,
-                    DEC   = 277,FOR   = 278,STR   = 279,
-                    RETURN = 282;
-        const tag_t STAGE = 283,VAR = 284,MAP   = 285,
+    namespace tag {
+        /*
+         * Basic Token
+         */
+        const tag_t BASIC = 256,ID    = 257,
+                    INDEX = 258,MINUS = 259,
+                    OR    = 260,AND   = 261,
+                    EQ    = 262,NE    = 263,
+                    GE    = 264,LE    = 265,
+                    TRUE  = 266,FALSE = 267,
+                    INC   = 268,DEC   = 269,
+                    PASS  = 270,MASS  = 271;
+        
+        /*
+         * Stream Control Token
+         */
+        const tag_t WHILE = 272,FOR   = 273,
+                    BREAK = 274,RETURN= 275,
+                    ELSE  = 276,DO    = 277,
+                    IF    = 278;
+        
+        /*
+         * Basic Type Token
+         */
+        const tag_t NUM   =  279,REAL = 280, 
+                    BOOL  =  281,STR  = 282;
+        
+        /*
+         * Keywords Etc
+         */
+        const tag_t STAGE = 283,VAR = 284,
+                    MAP   = 285,
                     GLOBAL = 286,LOCAL = 287;
                     
 
