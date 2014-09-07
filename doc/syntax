@@ -1,5 +1,5 @@
 var-declarator      -> [visibility-prefix] type-name name `;` |
-                    w   [visibility-prefix] type-name name = value `;` 
+                      [visibility-prefix] type-name name = value `;` 
 
 var-declarator-list -> %EMPTY% 
                         | var-declartor-list var-declarator 
