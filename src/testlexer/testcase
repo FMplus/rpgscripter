@@ -1,0 +1,9 @@
+stage ok:{
+    var:{
+        local string file;
+        local int    number;
+        local real   real_number;
+        local bool   ok;
+        global bool  is_ok;
+    };
+}

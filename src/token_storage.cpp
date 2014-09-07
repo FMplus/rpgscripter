@@ -31,7 +31,7 @@ namespace lexer{
             iter != seq.end();
             iter++){
             delete (*iter);
-            *iter = NULL;
+            //*iter = NULL;
         }
         seq.clear();
     }
