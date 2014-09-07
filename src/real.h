@@ -22,9 +22,9 @@ class real:public token {
         virtual ~real()
         {} 
     public:
-        std::string toString() const
+        string toString() const
         {
-            std::string str;
+            string str;
             std::stringstream ss;
             ss << value;
             ss >> str;

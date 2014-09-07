@@ -9,24 +9,24 @@
 namespace lexer {
     class str : public token {
         public:
-            typedef std::string str_t;
+            typedef std::string string;
             typedef str         self;
             typedef self*       self_ptr;
         public:
-            const str_t value;
+            const string value;
         
         public:
-            str(const str_t&value)
+            str(const string&value)
             :token(tag::STR),value(value)
             {}
-            
+
             virtual ~str()
             {}
             
-            std::string toString() const
+            string toString() const
             {
                 return value;
-            }   
+            }
     };//class str
 };//namespace lexer
 

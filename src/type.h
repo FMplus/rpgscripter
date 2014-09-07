@@ -4,6 +4,8 @@
 #include"word.h"
 #include"tag.h"
 
+#include<string>
+
 namespace symbols{
     class type : public lexer::word {
         public:
@@ -19,7 +21,7 @@ namespace symbols{
             virtual ~type()
             {}
         public:
-            std::string toString() const 
+            string toString() const 
             {
                 /*
                  * Because the name of the type is set in the words' lexme

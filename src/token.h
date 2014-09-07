@@ -9,6 +9,10 @@
 namespace lexer {
     struct token {
     public:
+        typedef std::string string;
+        typedef token self;
+        typedef self* self_ptr;
+    public:
         const tag_t tag;
     public:
         token(const tag_t t):tag(t)
@@ -16,17 +20,18 @@ namespace lexer {
         virtual ~token()
         {}
     public:
-        virtual std::string toString() const
+        virtual string toString() const
         {
-            std::string str;
+            string str;
             std::stringstream ss;
             ss << tag;
             ss >> str;
             return str;
         }
     };// struct token
-    // struct id : public token {
-        
-    // };
+    
+    extern token::self_ptr  lt_   ,gt_    ,ass_ ,
+                            not_  ,plus_  ,min_ ,
+                            mult_ ,div_   ;
 };//namespace lexer
 #endif // _TOKEN_H
