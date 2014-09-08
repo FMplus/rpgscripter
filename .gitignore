@@ -1,7 +1,5 @@
 # Project  Test files
-test*.cpp
-test*.h
-test*.c
+test*
 
 # Compiled Object files
 *.slo
