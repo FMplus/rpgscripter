@@ -6,4 +6,16 @@ stage ok:{
         local bool   ok;
         global bool  is_ok;
     };
+
+    onClick:{
+        i++;
+        i--;
+        j++;
+        if(i < 5){
+            i = 5;
+        } else {
+            i = 3;
+        }
+    }
+    map:"NAME = 223";
 }
