@@ -34,8 +34,8 @@ namespace lexer {
          * Keywords Etc
          */
         const tag_t STAGE = 283,VAR = 284,
-                    MAP   = 285,
-                    GLOBAL = 286,LOCAL = 287;
+                    MAP   = 285,THIS = 286,
+                    GLOBAL = 287,LOCAL = 288;
                     
 
     };//namespace tag

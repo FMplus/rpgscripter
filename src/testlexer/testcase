@@ -8,6 +8,8 @@ stage ok:{
     };
 
     onClick:{
+        int i;
+        this.ok = true;
         i++;
         i--;
         j++;

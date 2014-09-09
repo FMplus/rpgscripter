@@ -55,6 +55,7 @@ namespace lexer{
         this -> reserve(new word("map",tag::MAP));
         this -> reserve(new word("global",tag::GLOBAL));
         this -> reserve(new word("local",tag::LOCAL));
+        this -> reserve(new word("this",tag::THIS));
         this -> reserve(symbols::int_);this -> reserve(symbols::real_);
         this -> reserve(symbols::string_);this -> reserve(symbols::bool_);
     }
@@ -176,7 +177,7 @@ next:
                         buf += '\r';
                         break;
                     /*case '0':
-                        /**
+
                         buf += '\0';*/
                        // break;
                     case 'b':
